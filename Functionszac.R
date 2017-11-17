@@ -14,7 +14,7 @@ cor.test.somevsall <- function(mat2, rows, method) {
   mat <- deleterow(as.matrix(mat2));
         N = length(mat[,1]);
         M = length(rows);
-	library('doParallel');
+	library('doParallel'); # Works perfectly well but obviously want it to be more comaptible with BioConductor
 	n_cores<-detectCores();
 	cl<-makeCluster(n_cores);
 	registerDoParallel(cl)
